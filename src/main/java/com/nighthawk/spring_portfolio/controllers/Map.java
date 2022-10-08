@@ -9,7 +9,6 @@ public class Map {
     @GetMapping("/map")
     public String map() {
 
-        // load HTML VIEW (birds.html)
         return "map";
 
     }
