@@ -37,7 +37,7 @@ public class QuizController {
         Optional<Quiz> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
             Quiz question = optional.get();  // value from findByID
-            question.setHaha(question.getHaha()+1); // increment value
+            question.setChoiceA(question.getChoiceA()+1); // increment value
             repository.save(question);  // save entity
             return new ResponseEntity<>(question, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
         }
@@ -52,7 +52,7 @@ public class QuizController {
         Optional<Quiz> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
             Quiz question = optional.get();
-            question.setChoiceA(question.getChoiceA(question));
+            question.setChoiceB(question.getChoiceB()+1);
             repository.save(question);
             return new ResponseEntity<>(question, HttpStatus.OK);
         }
