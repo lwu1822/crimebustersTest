@@ -49,10 +49,10 @@ public class QuizController {
      */
     @PutMapping("/jeer/{id}")
     public ResponseEntity<Jokes> setJeer(@PathVariable long id) {
-        Optional<Jokes> optional = repository.findById(id);
+        Optional<Quiz> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
             Quiz question = optional.get();
-            question.setBoohoo(question.getBoohoo()+1);
+            question.setChoiceA(question.getChoiceA(question));
             repository.save(question);
             return new ResponseEntity<>(question, HttpStatus.OK);
         }

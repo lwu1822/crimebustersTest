@@ -26,9 +26,10 @@ public class QuizInit {
 
             // make sure Joke database is populated with starting jokes
             for (String question : quizArray) {
-                List<Quiz> test = repository.findByJokeIgnoreCase(question);  // JPA lookup
+                List<Quiz> test = repository.findByQuestionIgnoreCase(question);  // JPA lookup
                 if (test.size() == 0)
                     repository.save(new Quiz(null, question)); //JPA save
+
             }
             
         };
