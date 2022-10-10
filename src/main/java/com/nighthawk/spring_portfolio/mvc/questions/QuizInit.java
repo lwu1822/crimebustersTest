@@ -28,7 +28,7 @@ public class QuizInit {
             for (String question : quizArray) {
                 List<Quiz> test = repository.findByQuestionIgnoreCase(question);  // JPA lookup
                 if (test.size() == 0)
-                    repository.save(new Quiz(null, question)); //JPA save
+                    repository.save(new Quiz(null, question, null)); //JPA save
 
             }
             

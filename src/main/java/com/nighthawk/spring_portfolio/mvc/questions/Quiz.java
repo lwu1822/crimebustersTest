@@ -1,14 +1,31 @@
 package com.nighthawk.spring_portfolio.mvc.questions;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id; 
 
-
+@Entity
 public class Quiz {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; 
+
+    @Column(unique=true)
     private String question; 
     private String answer; 
+
     private int choiceA;
     private int choiceB; 
+
+    public Quiz(Long id, String question, String answer) {
+        this.id = id; 
+        this.question = question;
+        this.answer = answer;
+        this.choiceA = choiceA;
+        this.choiceB = choiceB;
+    }
 
     public Long getId() {
         return id;
@@ -43,7 +60,7 @@ public class Quiz {
     }
 
     public int getChoiceB() {
-        return choiceA;
+        return choiceB;
     }
 
     public void setChoiceB(int choiceB) {

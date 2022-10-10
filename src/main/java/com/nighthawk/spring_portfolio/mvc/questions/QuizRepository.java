@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface QuizRepository extends JpaRepository<Quiz, Long> {
     void save(String Question);
     List<Quiz> findAllByOrderByQuestionAsc();
-    List<Quiz> findByQuestionIgnoreCase(String question);
+    List<Quiz> findByQuestionIgnoreCase(String name);
 }
 
 

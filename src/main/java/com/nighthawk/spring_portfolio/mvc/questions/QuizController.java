@@ -45,8 +45,9 @@ public class QuizController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);  // Failed HTTP response: status code, headers, and body
     }
 
-    /* Update Jeer
-     */
+    /*  NOTE: COMMENTED OUT FOR NOW TO SIMPLIFY THINGS
+    Update Jeer
+     
     @PutMapping("/choiceB/{id}")
     public ResponseEntity<Jokes> setJeer(@PathVariable long id) {
         Optional<Quiz> optional = repository.findById(id);
@@ -59,6 +60,8 @@ public class QuizController {
         // Bad ID
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+
+    */
 }
 
 
