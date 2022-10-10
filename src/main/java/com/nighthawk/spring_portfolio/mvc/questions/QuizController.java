@@ -27,7 +27,7 @@ public class QuizController {
      * @PutMapping annotation is used for mapping HTTP PUT requests onto specific handler methods.
      * @PathVariable annotation extracts the templated part {id}, from the URI
      */
-    @PutMapping("/like/{id}")
+    @PutMapping("/choiceA/{id}")
     public ResponseEntity<Quiz> setLike(@PathVariable long id) {
         /* 
         * Optional (below) is a container object which helps determine if a result is present. 
@@ -47,7 +47,7 @@ public class QuizController {
 
     /* Update Jeer
      */
-    @PutMapping("/jeer/{id}")
+    @PutMapping("/choiceB/{id}")
     public ResponseEntity<Jokes> setJeer(@PathVariable long id) {
         Optional<Quiz> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
