@@ -27,6 +27,10 @@ public class Quiz {
         this.choiceB = choiceB;
     }
 
+    public Quiz() {
+        
+    }
+
     public Long getId() {
         return id;
     }
