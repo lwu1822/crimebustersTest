@@ -28,7 +28,7 @@ public class Quiz {
     }
 
     public Quiz() {
-        
+        // testing branch comment
     }
 
     public Long getId() {
